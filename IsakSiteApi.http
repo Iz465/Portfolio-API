@@ -1,0 +1,15 @@
+@IsakSiteApi_HostAddress = http://localhost:5230
+
+GET {{IsakSiteApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{IsakSiteApi_HostAddress}}/api/portfolio
+Content-Type: application/json
+{
+  "title": "Task Management API",
+  "link": "4lgfgi234"
+}
+
+
