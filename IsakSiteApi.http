@@ -5,11 +5,28 @@ Accept: application/json
 
 ###
 
+GET http://localhost:5230/api/portfolio
+
+
+###
+PUT http://localhost:5230/api/portfolio/11
+Content-Type: application/json
+{
+  "Title": "Placeholder Project"
+ 
+
+}
+
+###
+
 POST {{IsakSiteApi_HostAddress}}/api/portfolio
 Content-Type: application/json
 {
-  "title": "Task Management API",
+  "title": "Food Shop API",
   "link": "4lgfgi234"
 }
+
+###
+DELETE {{IsakSiteApi_HostAddress}}/api/portfolio/10
 
 
