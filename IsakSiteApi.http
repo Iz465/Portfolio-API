@@ -9,11 +9,11 @@ GET http://localhost:5230/api/portfolio
 
 
 ###
-PUT http://localhost:5230/api/portfolio/11
+PUT http://localhost:5230/api/portfolio/12
 Content-Type: application/json
 {
-  "Title": "Placeholder Project"
- 
+  "title": "Food Shop API",
+  "technologies": "ASP.NET CORE, React, TypeScript, SQLite"
 
 }
 
@@ -22,11 +22,14 @@ Content-Type: application/json
 POST {{IsakSiteApi_HostAddress}}/api/portfolio
 Content-Type: application/json
 {
-  "title": "Food Shop API",
-  "link": "4lgfgi234"
+  "title": "Task Management API",
+  "description": "A Full-Stack application that lets users manage their projects, allowing them to create tasks, with a status and due-date.",
+  "technologies": "ASP.NET CORE, React, JavaScript, PostgreSQL",
+  "githubLink": "https://github.com/Iz465/Task-Management-API",
+  "imageURL": "Image URL here"
 }
 
 ###
-DELETE {{IsakSiteApi_HostAddress}}/api/portfolio/10
+DELETE {{IsakSiteApi_HostAddress}}/api/portfolio/14
 
 

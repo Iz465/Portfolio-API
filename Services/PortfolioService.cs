@@ -16,10 +16,17 @@ namespace IsakSiteApi.Services
         public PortfolioService(PortfolioDbContext context) =>
             _context = context;
 
-        public async Task<List<Portfolio>> GetPortfolios()
-        {
-            return await _context.Portfolio.ToListAsync();
-        }
+        public async Task<List<PortfolioDto>> GetPortfolios() =>
+            await _context.Portfolio.Select(item => new PortfolioDto()
+            {
+                Id = item.Id,
+                Title = item.Title,
+                Description = item.Description,
+                Technologies = item.Technologies,
+                GithubLink = item.GithubLink,
+                ImageURL = item.ImageURL
+            }).ToListAsync();
+        
 
         public async Task<EPortfolio> UpdatePortfolio(int id, PortfolioUpdateDto dto)
         {
@@ -29,8 +36,19 @@ namespace IsakSiteApi.Services
 
             if (dto.Title != string.Empty)
                 portfolio.Title = dto.Title;
-            if (dto.Link != string.Empty)
-                portfolio.Link = dto.Link;
+
+            if (dto.Description != dto.Description)
+                portfolio.Description = dto.Description;
+
+            if (dto.Technologies != string.Empty)
+                portfolio.Technologies = dto.Technologies;
+         
+            if (dto.GithubLink != string.Empty)
+                portfolio.GithubLink = dto.GithubLink;
+
+            if (dto.ImageURL != string.Empty)
+                portfolio.ImageURL = dto.ImageURL;
+
 
             _context.Portfolio.Update(portfolio);
             await _context.SaveChangesAsync();
@@ -38,8 +56,16 @@ namespace IsakSiteApi.Services
             return EPortfolio.Updated;
         }
 
-        public async Task<EPortfolio> CreatePortfolio(Portfolio portfolio)
+        public async Task<EPortfolio> CreatePortfolio(PortfolioCreateDto dto)
         {
+            var portfolio = new Portfolio()
+            {
+                Title = dto.Title,
+                Description = dto.Description,
+                Technologies = dto.Technologies,
+                GithubLink = dto.GithubLink,
+                ImageURL = dto.ImageURL
+            };
 
             await _context.Portfolio.AddAsync(portfolio);
             await _context.SaveChangesAsync();

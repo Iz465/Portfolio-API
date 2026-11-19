@@ -21,11 +21,9 @@ namespace IsakSiteApi.Controllers
 
 
         [HttpGet]
-        public async Task<List<Portfolio>> GetPortfolios()
-        {
-            Console.WriteLine("Accessing portfolio GET method");
-            return await _services.GetPortfolios();
-        }
+        public async Task<List<PortfolioDto>> GetPortfolios() =>         
+            await _services.GetPortfolios();
+        
 
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdatePortfolio(int id, PortfolioUpdateDto dto)
@@ -41,7 +39,7 @@ namespace IsakSiteApi.Controllers
 
 
         [HttpPost]
-        public async Task<ActionResult> CreatePortfolio(Portfolio portfolio)
+        public async Task<ActionResult> CreatePortfolio(PortfolioCreateDto portfolio)
         {
 
             EPortfolio result = await _services.CreatePortfolio(portfolio);

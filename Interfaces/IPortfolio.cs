@@ -7,9 +7,9 @@ namespace IsakSiteApi.Interfaces
 {
     public interface IPortfolio
     {
-        Task<List<Portfolio>> GetPortfolios();
+        Task<List<PortfolioDto>> GetPortfolios();
         Task<EPortfolio> UpdatePortfolio(int id, PortfolioUpdateDto dto);
-        Task<EPortfolio> CreatePortfolio(Portfolio portfolio);
+        Task<EPortfolio> CreatePortfolio(PortfolioCreateDto portfolio);
         Task<EPortfolio> DeletePortfolio(int id);
 
     }
