@@ -32,4 +32,27 @@ Content-Type: application/json
 ###
 DELETE {{IsakSiteApi_HostAddress}}/api/portfolio/14
 
+###
+GET {{IsakSiteApi_HostAddress}}/api/owner
+
+###
+PUT {{IsakSiteApi_HostAddress}}/api/owner
+Content-Type: application/json
+{
+  "name": "Isak Molving",
+  "skills": "C++, C#",
+  "description": "I am a recently graduated student with a bachelors degree in software engineering"
+}
+
+###
+POST {{IsakSiteApi_HostAddress}}/api/owner
+Content-Type: application/json
+{
+  "name": "Isak Molving",
+  "skills": "C++, C#",
+  "description": "I am a recently graduated student with a bachelors degree in software engineering"
+}
+
+
+
 

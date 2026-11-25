@@ -12,6 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 builder.Services.AddScoped<IPortfolio, PortfolioService>();
+builder.Services.AddScoped<IOwner, OwnerService>();
 
 builder.Services.AddDbContext<PortfolioDbContext>(options =>
     options.UseNpgsql(

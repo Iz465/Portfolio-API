@@ -1,7 +1,6 @@
 ﻿using IsakSiteApi.Dtos;
 using IsakSiteApi.Enums;
-using IsakSiteApi.Models;
-using Microsoft.AspNetCore.Mvc;
+
 
 namespace IsakSiteApi.Interfaces
 {
