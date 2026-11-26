@@ -53,6 +53,16 @@ Content-Type: application/json
   "description": "I am a recently graduated student with a bachelors degree in software engineering"
 }
 
+### 
+POST {{IsakSiteApi_HostAddress}}/api/create
+Content-Type: application/json
+{
+  "username": "Guthix",
+  "email": "Guthix29",
+  "password": "Stone of Jas"
+}
+
+
 
 
 

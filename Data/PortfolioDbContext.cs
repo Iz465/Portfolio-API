@@ -12,5 +12,6 @@ namespace IsakSiteApi.Data
 
         public DbSet<Portfolio> Portfolio { get; set; }
         public DbSet<Owner> Owner { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }

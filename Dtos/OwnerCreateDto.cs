@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+
+using System.ComponentModel.DataAnnotations;
 
 namespace IsakSiteApi.Dtos
 {
     public class OwnerCreateDto
     {
-
         [Required]
         public string Name { get; set; } = string.Empty;
 
@@ -13,6 +14,5 @@ namespace IsakSiteApi.Dtos
 
         [Required]
         public string Description { get; set; } = string.Empty;
-
     }
 }
